@@ -10,14 +10,11 @@ format: html
 pm2_5 <- 48
 if (pm2_5 < 100){
   print("Low to moderate risk")
-} else if (pm2_5 <= 100| pm2_5 <150){
+} else if (pm2_5 <= 100 & pm2_5 <150){
   print("Unhealthy for sensitive groups")
 } else if (pm2_5 >= 150){
   print("Health risk present")
-} else {
-  print("anything else")
 }
-pm2_5
 ```
 # Task 2
 Store the string “blue whale” as an object called species. Write an if statement that returns “You found a whale!” 
@@ -37,19 +34,17 @@ A chicken burrito costs 3.00 more than a base burrito
 A steak burrito costs 3.25 more than a base burrito
 ```{r}
 base_burrito <- 6.50
-chicken_burrito <- base_burrito + 3
-steak_burrito <- base_burrito - 3.5
-main_ingredient <- c("veggie")
-chicken <- c("chicken")
-steak<- c("steak")
+main_ingredient <- "steak"
 
-if(main_ingredient == "veggi"){
-  print(paste("Price of", base_burrito))
-} else if (chicken == "chicke"){
-  print(paste("Price of chicken burrito", chicken_burrito))
-} else if (steak == "steak"){
-  print(paste("Price of steak burrito", steak_burrito))
+if (main_ingredient == "veggie") {
+  price = base_burrito
+} else if (main_ingredient == "chicken") {
+  price = base_burrito + 3.00
+} else if (main_ingredient == "steak") {
+  price = base_burrito + 3.25
 }
+
+print(paste("The burrito is",price, "for steak"))
 ```
 
 ## For Loops
@@ -57,7 +52,8 @@ if(main_ingredient == "veggi"){
 - Create a new vector called fish that contains the values 8, 10, 12, 23 representing counts of different fish types in a fish tank (goldfish, tetras, guppies, and mollies, respectively). 
 - Write a for loop that iterates through fish, and returns what proportion of total fish in the tank are that species. Assume that these counts represent all fish in the tank.
 ```{r}
-fish <- c(8, 10, 12, 23)
+# Add fish and = # for iteration to print out
+fish <- c(goldfish = 8, tetras = 10, guppies = 12, mollies = 23)
 #fish_types <- c("goldfish", "tetras", "guppies", "mollies") #not needed
 
 for(i in seq_along(fish)){
